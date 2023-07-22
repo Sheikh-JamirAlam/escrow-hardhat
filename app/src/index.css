@@ -1,70 +1,129 @@
+:root {
+  --main-bg: #050505;
+  --card-bg: #0f1424;
+  --button-bg: #5d7ad9;
+  --text-header: #6f8ff6;
+  --text-light: #fafafa;
+  --text-dark: #121112;
+  --success: #5aa75a;
+}
+
 body {
-  background-color: #eee;
-  display: flex;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
   font-family: 'Muli', sans-serif;
+  background-color: var(--main-bg);
 }
 
-.contract, .existing-contracts {
-  margin: 20px;
+main {
+  display: flex;
+}
+
+header {
+  text-align: center;
+  display: flex;
+  padding: 0 20rem;
+  justify-content: space-between;
+}
+
+.heading {
+  margin: 2rem 0;
+  font-size: 30px;
+  font-weight: 900;
+  color: var(--text-header);
+}
+
+.tabs {
+  font-size: 20px;
+  display: flex;
+}
+
+.tabs-name {
+  color: var(--text-light);
+  margin: auto 2rem;
+  cursor: pointer;
+}
+
+.existing-contracts {
+  display: none;
+}
+
+.contract,
+.existing-contracts {
+  margin: 5rem auto;
   display: inline-block;
-  padding: 40px;
-  border: 1px solid #ddd;
-  background-color: #fff;
+  width: 45rem;
+  padding: 2rem;
+  background-color: var(--card-bg);
+  border-radius: 10px;
 }
 
-h1 {
-  margin: 10px;
-  padding: 10px;
-  border-bottom: 1px solid #eee;
+.contract-header {
+  margin: 0 0 2rem;
+  color: var(--text-light);
 }
 
-label {
+.contract-label {
   display: flex;
   flex-direction: column;
   text-transform: uppercase;
   color: #aaa;
-  margin: 20px;
+  margin: 2rem 3rem;
 }
 
 input[type="text"] {
   padding: 6px;
   font-size: 18px;
+  outline: none;
+  margin-top: 0.5rem;
 }
 
 .button {
-  background-color: #f58427;
-  color: white;
+  background-color: var(--text-header);
+  color: var(--text-dark);
   text-align: center;
   font-weight: bold;
   text-transform: uppercase;
-  margin: 20px;
-  padding: 9px 25px;
-  font-size: 14px;
+  margin: 3rem 12rem 0;
+  padding: 1rem;
+  border-radius: 5px;
+  font-size: 16px;
   letter-spacing: 1px;
   cursor: pointer;
+
+  &:hover {
+    background-color: var(--button-bg);
+  }
 }
 
-.existing-contract ul {
+.existing-contract .fields {
   padding: 10px;
   margin: 20px;
-  background-color: #eee;
+  background-color: var(--text-dark);
+  border-radius: 10px;
 }
 
-.existing-contract ul > li {
+.existing-contract ul>li {
   list-style: none;
   display: flex;
   margin: 10px;
 }
 
-.existing-contract ul > li > div {
+.existing-contract ul>li>div {
   margin: 0 5px;
+  color: var(--text-light);
 }
 
-.existing-contract ul > li > :first-child {
+.existing-contract ul>li> :first-child {
   font-weight: bold;
 }
 
 .existing-contract .complete {
-  color: #5aa75a;
+  width: fit-content;
+  background-color: var(--success);
   text-align: center;
+  margin: 2rem auto 1rem;
+  padding: 0.5rem 2rem;
+  border-radius: 5px;
 }

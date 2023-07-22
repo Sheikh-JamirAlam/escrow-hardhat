@@ -1,10 +1,4 @@
-export default function Escrow({
-  address,
-  arbiter,
-  beneficiary,
-  value,
-  handleApprove,
-}) {
+export default function Escrow({ address, arbiter, beneficiary, value, status, handleApprove }) {
   return (
     <div className="existing-contract">
       <ul className="fields">
@@ -21,15 +15,16 @@ export default function Escrow({
           <div> {value} </div>
         </li>
         <div
-          className="button"
+          className={status === 1 ? "button" : "complete"}
           id={address}
+          style={{ pointerEvents: status === 0 && "none" }}
           onClick={(e) => {
             e.preventDefault();
 
             handleApprove();
           }}
         >
-          Approve
+          {status === 1 ? "Approve" : "✓ It's been approved!"}
         </div>
       </ul>
     </div>

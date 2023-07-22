@@ -4,3 +4,6 @@ cache
 node_modules
 artifacts
 *.bck
+
+.env
+.vscode
